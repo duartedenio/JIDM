@@ -1,0 +1,129 @@
+_id.object::=  $oid: S
+EXEMPLO: "bounding_box":{"type":"Polygon","coordinates":[[[36.887816,55.488324],[36.887816,56.021251],[37.967469,56.021251],[37.967469,55.488324]]]}
+bounding_box.object::=  coordinates: coordinates.array 
+						type: [Point, Polygon, animated_gif, photo, video]
+coordinates.object::= 	?coordinates: coordinates.array 
+						type: [Point, Polygon, animated_gif, photo, video]
+entities.object::=  	media: ?[{(S:array, S:R, S:R, S:object, S:S)+}] 
+						symbols: symbols.array 
+						user_mentions: user_mentions.array 
+						urls: urls.array 
+						hashtags: hashtags.array
+extended_entities.object::=	media: ?[{(S:array, S:R, S:R, S:object, S:S)+}]
+extended_tweet.object::=	extended_entities: extended_entities.object 
+							entities: entities.object 
+							display_text_range: [integer, integer] 
+							full_text: S
+geo.object::= 			?coordinates: coordinates.array 
+						type: [Point, Polygon, animated_gif, photo, video]
+hashtags.array::= [hashtags.array.object]
+hashtags.array.object::=	?indices: [integer, integer] 
+							text: S
+place.object::= 		?attributes: {()+} 
+						bounding_box: bounding_box.object 
+						country: S 
+						country_code: S 
+						full_name: S 
+						name: S 
+						place_type: [neighborhood, poi, country, city, admin] 
+						url: S 
+						id: S
+quoted_status.object::=	coordinates: coordinates.object 
+						geo: geo.object 
+						withheld_in_countries: ?[FR, TR, DE, RU, XX] 
+						scopes: scopes.object 
+						in_reply_to_user_id: ?R 
+						in_reply_to_screen_name: ?S 
+						in_reply_to_user_id_str: ?S 
+						in_reply_to_user_id: ?R 
+						in_reply_to_status_id_str: ?S 
+						in_reply_to_status_id: ?R 
+						place: place.object 
+						extended_tweet: extended_tweet.object 
+						quoted_status_id_str: S 
+						quoted_status_id: quoted_status_id.double 
+						possibly_sensitive: B 
+						extended_entities: extended_entities.object 
+						display_text_range: [integer, integer] 
+						lang: S 
+						filter_level: low 
+						retweeted: B 
+						favorited: B 
+						entities: entities.object 
+						favorite_count: R 
+						retweet_count: R 
+						reply_count: R 
+						quote_count: R 
+						is_quote_status: is_quote_status.boolean 
+						contributors: null 
+						place: null 
+						coordinates: null 
+						geo: null 
+						user: user.object 
+						in_reply_to_screen_name: null 
+						in_reply_to_user_id_str: null 
+						in_reply_to_user_id: null 
+						in_reply_to_status_id_str: null 
+						in_reply_to_status_id: null 
+						truncated: B 
+						source: S 
+						text: S 
+						id_str: S 
+						id: R 
+						created_at: S
+root::=					in_reply_to_status_id: R 
+						withheld_in_countries: ?[FR, TR, DE, RU, XX] 
+						coordinates: coordinates.object 
+						geo: geo.object 
+						place: place.object 
+						in_reply_to_user_id: ?R 
+						extended_entities: extended_entities.object 
+						in_reply_to_screen_name: ?S 
+						in_reply_to_user_id_str: ?S 
+						in_reply_to_user_id: ?R 
+						in_reply_to_status_id_str: ?S 
+						in_reply_to_status_id: ?R 
+						quoted_status: quoted_status.object 
+						quoted_status_id_str: S 
+						quoted_status_id: quoted_status_id.double 
+						extended_tweet: extended_tweet.object 
+						display_text_range: [integer, integer] 
+						possibly_sensitive: B 
+						retweeted_status: retweeted_status.object 
+						keywords: [string] 
+						channels: {(S:array)+} 
+						timestamp_ms: S 
+						lang: S 
+						filter_level: low 
+						retweeted: B 
+						favorited: B 
+						entities: entities.object 
+						favorite_count: R 
+						retweet_count: R 
+						reply_count: R 
+						quote_count: R 
+						is_quote_status: is_quote_status.boolean 
+						contributors: null 
+						place: null 
+						coordinates: null 
+						geo: null 
+						user: user.object 
+						in_reply_to_screen_name: null 
+						in_reply_to_user_id_str: null 
+						in_reply_to_user_id: null 
+						in_reply_to_status_id_str: null 
+						in_reply_to_status_id: null 
+						truncated: B 
+						source: S 
+						text: S 
+						id_str: S 
+						id: R 
+						created_at: S 
+						_id: _id.object
+scopes.object::= 		?followers: B
+symbols.array::= 		[symbols.array.object]
+symbols.array.object::= ?indices: [integer, integer] text: S
+urls.array::= 			[?indices: [integer, integer] display_url: S expanded_url: S url: S]
+user.object::=  profile_banner_url: ?S url: S time_zone: ?null utc_offset: ?null description: ?null location: ?null id: R notifications: null follow_request_sent: null following: null default_profile_image: B default_profile: B profile_image_url_https: S profile_image_url: S profile_use_background_image: B profile_text_color: S profile_sidebar_fill_color: S profile_sidebar_border_color: S profile_link_color: S profile_background_tile: B profile_background_image_url_https: S profile_background_image_url: S profile_background_color: S is_translator: B contributors_enabled: B lang: S geo_enabled: B time_zone: ?S utc_offset: ?R created_at: S statuses_count: R favourites_count: R listed_count: R friends_count: R followers_count: R verified: B protected: B translator_type: moderator, badged, none, regular] description: ?S url: ?null location: ?S screen_name: S name: S id_str: S id: ?R
+user_mentions.array::= [?{(S:array, S:R, S:R, S:null, S:S)+}]
+

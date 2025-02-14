@@ -1,0 +1,50 @@
+\section{Related Work}
+\label{sec:RW}
+
+In this section we present some works related to JSON Schema extraction, where each of them deal with the problem using their own approach. By the end of this section, we list their results in comparison to what is proposed in this paper.
+
+On the works of Frozza et al. (2018) \nocite{frozza2018approach} and Baazizi et al. (2019) \nocite{baazizi2019parametric} both emphasize JSON Schema extraction. The first consists of obtaining each key type, followed by removing the duplicated ones after sorting them, and finally creating a tree-based data structure called \textit{Raw Schema Unified Structure} (RSUS), which is manipulated by \textit{Model Driven Engineering} (MDE), enabling the JSON Schema development. On the other hand, the second focus on large datasets using the MapReduce framework, inferring types by using the Map operation as a first phase, in the reduce phase equal types are merged to become one. On these works, two approaches were proposed: the first refers to the similarity between key types (\textit{kind equivalence}), while the second restricts merging only objects with the duplicate nested keys (\textit{label equivalence}). 
+
+Abdelhedi et al. (2021) \nocite{abdelhedi2021automatic} proposed the \textit{ToNoSQLSchema} tool, which uses \textit{Model Driven Architecture} (MDA) to generate a NoSQL Schema from documents, instead of extracting the JSON Schema. The authors propose six transformation rules: the first creates a collection (\textit{DB\_Schema}) from a NOSQL database; the second groups each input collection into a \textit{CollectionSchema}; the third infers atomic types, replacing values with types; The fourth traverses complex structures, applying the third rule when atomic keys are found; and the last two rules are used to create the structure for mono and multivalued keys.
+
+Namba (2021) \nocite{Nam21} applies machine learning to enhance the JSON Schema extraction by distinguishing keys that represent data. The work proposes six attributes: (\textit{i}) the Intrinsic Characteristics Domain, (\textit{ii}) the Central Tendency Domain, (\textit{iii}) the Statistical Dispersion Domain, (\textit{iv}) the Distribution Shape Domain, (\textit{v}) the Semantic and Contextual Similarity Domain, and (\textit{vi}) the Structural Similarity Domain. Those features are used to build a labeled dataset to infer whether or not a pair (key, value) represents metadata or data.
+
+Klessinger et al. (2022) \nocite{klessinger2022extracting} aim to discover tagged unions by detecting dependencies between a value and specific structures. They generate a tree from the values in a JSON collection so that a \textit{relational encoding} can be created and dependencies between keys can be found.
+
+% Thilagam et al. (2022) \nocite{thilagam2022clustvariants} propose a tool called \textit{ClustVariants} that identifies variations in a schema. First, the structure of a JSON collection is extracted. Next, developing a hierarchical structure, similar subsets are clustered using Formal Concept Analysis - FCA, which can spot schema variants. Thus, their approach first extracts the schema, and then generates clusters (clustering those with similar structure) to detect the variants from each cluster. 
+
+Spoth et al. (2021) \nocite{Sp+21} developed \textit{Jxplain}, which uses heuristics to reduce schema ambiguities. They mention that most tools do not consider objects can appear with the structure of a collection, and arrays can have the structure of a tuple. For that, they calculate Key-Space and Type Entropy. The first considers that keys tend to vary more on collections, whether types have the opposite behavior. They also identify Multi-Entity Collections using a bi-clustering technique.
+
+To compare the related work with our proposal, we show Table~\ref{tab:Compara}, summarizing the features listed on each of the previously presented paper. The columns \textit{BT}, \textit{TU}, \textit{Meta}, \textit{Col}, \textit{Tup}, and \textit{Enum}, stand for Basic Types (e.g., atomic, objects, and arrays), Tagged Unions, Metadata, Collections, Tuples, and Enumeration. 
+%
+
+\begin{table*}
+\caption{Table comparing the information inferred from each related work.}
+
+\centering
+\small
+\begin{tabular}{|c|c|c|c|c|c|c|c|} 
+\hline
+\textbf{Reference}   & \textbf{BT} & \textbf{TU} & \textbf{Meta} & \textbf{Col} & \textbf{Tup} & \textbf{Enum}  \\ 
+\hline
+Frozza et al. (2018)     & Y                     & N                      & N                                  & N                               & N                              & N                     \\ 
+\hline
+Baazizi et al. (2019)     & Y                     & N                      & N                                  & N                               & N                         & N                     \\ 
+\hline
+Abdelhedi et al. (2021)          & Y                     & N                      & N                                  & N                               & N                                  & N                     \\ 
+\hline
+Namba (2021)     & Y                     & N                      & Y                                  & Y                               & Y                                        & N                     \\ 
+\hline
+Klessinger et al. (2022) & Y                     & Y                      & N                                  & N                               & N                         & N                      \\ 
+\hline
+Spoth et al. (2021)      & Y                     & N                      & Y                                  & Y                               & Y                                           & N                     \\ 
+\hline
+JFUSE & Y                     & Y                      & Y                                  & Y                               & Y                                               & Y                     \\
+\hline
+\end{tabular}
+\label{tab:Compara}
+\end{table*}
+
+Note that all approaches, as expected, extract basic types (\textit{i.e.}, primitive and complex). The work of Frozza et al. (2018), Baazizi et al. (2019) and Abdelhedi et al. (2021) focus only on the extraction of this kind of type. Namba and Mior (2021) and Spoth et al. (2021) propose very complete tools, however they lack discovering tagged unions and enumerations. Although Klessinger et al. (2022) include tagged union in the target schema, other types are not considered. JFUSE, on the other hand, can discover the main JSON collections facets. 
+
+

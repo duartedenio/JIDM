@@ -1,0 +1,99 @@
+\documentclass{sbc2019}%
+
+\usepackage{graphicx,url}
+\usepackage[utf8]{inputenc}
+\usepackage[misc,geometry]{ifsym} 
+\usepackage{fontspec}
+\usepackage{fontawesome}
+\usepackage{academicons}
+\usepackage{color}
+\usepackage{hyperref} 
+\usepackage{aas_macros}
+\usepackage[bottom]{footmisc}
+\usepackage{supertabular}
+\usepackage{afterpage}
+\usepackage{url}
+\usepackage{pifont}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{syntax}
+
+\setcitestyle{square}
+
+\definecolor{orcidlogo}{rgb}{0.37,0.48,0.13}
+\definecolor{unilogo}{rgb}{0.16, 0.26, 0.58}
+\definecolor{maillogo}{rgb}{0.58, 0.16, 0.26}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.0}
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=darkblue,urlcolor=darkblue,
+            anchorcolor=darkblue,citecolor=darkblue}
+%\hypersetup{colorlinks,citecolor=blue,linkcolor=blue,urlcolor=blue}
+
+%%%%%%% IMPORTANT: We disable hyperlinks by default with this line, to avoid the error "\pdfendlink ended up in different nesting level" while writing.
+%\hypersetup{draft}
+
+%\jid{JBCS}
+\jid{JIDM}
+\jtitle{Journal of Information and Data Management, 2024, 13:1, }
+\doi{10.5753/jidm.2024.XXXXXX}
+\copyrightstatement{This work is licensed under a Creative Commons Attribution 4.0 International License}
+\jyear{2023}
+
+
+\newtheorem{example}{Example}
+\newtheorem{definition}{Definition}
+
+\title{JFUSE: Json FUll Schema Extractor}
+
+\author[Banhara et at. 2025]{
+ \affil{Natália Banhara~\textcolor{blue}{\faEnvelopeO}~~[~\textbf{Universidade Federal da Fronteira Sul}~|\href{mailto:natalia.banhara@outlook.com}{~\textbf{\textit{natalia.banhara@outlook.com}}}~]} 
+  \affil{Geomar A. Schreiner~[~\textbf{Universidade Federal da Fronteira Sul}~|{~\textbf{\textit{gschreiner@uffs.edu.br}}}~]} 
+  \affil{Samuel da Silva Feitosa~[~\textbf{Universidade Federal da Fronteira Sul}~|{~\textbf{\textit{samuel.feitosa@uffs.edu.br}}}~]} 
+  \affil{Denio Duarte~[~\textbf{Universidade Federal da Fronteira Sul}~|{~\textbf{\textit{duarte@uffs.edu.br}}}~]}
+}
+
+
+\begin{document} 
+
+\begin{frontmatter}
+
+\maketitle
+
+\begin{mail}
+Universidade Federal da Fronteira Sul, Rodovia SC 484 - Km 02, Fronteira Sul, CEP 89815-899, Chapecó, SC, Brazil.
+\end{mail}
+
+\begin{dates}
+\small{\textbf{Received:} DD Month YYYY~~~$\bullet$~~~\textbf{Accepted:} DD Month YYYY~~~$\bullet$~~~\textbf{Published:} DD Month YYYY}
+%Full list of authors' information is available at the end of the article.
+\end{dates}
+
+\begin{abstract}
+Recently, JSON became a trendy data format for representing datasets. 
+Its success is due to embodying structure and data in the same representation. 
+Moreover, it has a loose structure, i.e., the structure (aka schema) is not rigid. 
+While the absence of a rigid schema brings several advantages, it is impossible to exploit some benefits of knowing the schema in advance, such as query and storage optimization and improving data curation. 
+In this paper, we propose JFUSE, a tool to deal with the problem of discovering a schema from JSON collections. Besides inferring basic types (e.g., atomic types, arrays, and objects), JFUSE also discovers enumeration, tagged unions, metadata as data, objects as collections, and arrays as tuples. 
+We propose a metamodel that can be easily transformed into any schema language (e.g., JSON Schema). 
+Our experiments show that the proposed approach infers concise and correct schemas from (huge) JSON collections.
+\end{abstract}
+     
+\begin{keywords}
+Schema Discovering, JSON, Metamodel
+\end{keywords}
+
+\end{frontmatter}
+
+\input{Section/Introduction}
+\input{Section/Preliminaries}
+\input{Section/Related}
+\input{Section/SchemaDiscover}
+\input{Section/Results}
+\input{Section/Conclusion}
+ 
+
+\bibliographystyle{sbc}
+\bibliography{refs}
+
+\end{document}

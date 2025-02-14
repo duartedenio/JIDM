@@ -1,0 +1,17 @@
+\section{Conclusion}
+\label{sec:Concl}
+
+We introduced a novel approach to extracting schema from JSON collections. The key distinguishing features of our tool are:
+
+\begin{itemize}
+    \item Our tool has the unique capability to discover tagged unions, a feature that is not straightforward to extract. This is particularly valuable as a value of an object's property (the tag) conditionally may imply subschemas for sibling properties.
+    \item Based on a threshold, field values may be considered as enumeration. It allows the tool to handle variations in data representation, enhancing the accuracy of schema extraction.
+    \item Our tool can distinguish between tuples and collections, thereby accurately identifying the content of arrays and objects. This capability significantly improves the reliability of the schema extraction process.
+    \item We propose a metamodel that can be transformed into any schema language.
+    \item It captures data encoded as metadata, \textit{i.e.}, although a field is encoded as an object, it may represent collections where each element maps keys to values. For example, the field \texttt{characters} from Figure~\ref{fig:JSONEx} is encoded as \textit{character name} and their \textit{age}.
+\end{itemize}
+
+Our experiments showed that our approach could extract all the JSON schema facets proposed here, the execution time was satisfactory, and the extracted schema was concise and correct. In future work, we intend to automatize the threshold values, \textit{i.e.}, the tool discovers the best values for a given collection.  
+
+\noindent
+\textbf{Acknowledgments}: Natália Banhara was partially funded by Universidade Federal da Fronteria Sul under process number PES-2021-0458.

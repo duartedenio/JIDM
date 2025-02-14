@@ -1,0 +1,73 @@
+\begin{thebibliography}{}
+
+\bibitem[Abdelhedi et~al. 2021]{abdelhedi2021automatic}
+Abdelhedi, F., Brahim, A.~A., Rajhi, H., Ferhat, R.~T., and Zurfluh, G. (2021).
+\newblock Automatic extraction of a document-oriented nosql schema.
+\newblock In {\em ICEIS (1)}, pages 192--199.
+
+\bibitem[Baazizi et~al. 2019]{baazizi2019parametric}
+Baazizi, M.-A., Colazzo, D., Ghelli, G., and Sartiani, C. (2019).
+\newblock Parametric schema inference for massive {JSON} datasets.
+\newblock {\em The VLDB Journal}, 28:497--521.
+
+\bibitem[Banhara et~al. 2024]{Ba+24}
+Banhara, N., Schreiner, G., Feitosa, S., and Duarte, D. (2024).
+\newblock Enumeration, tagged unions, tuples, and collections: A novel approach
+  to extracting {JSON} schema.
+\newblock In {\em Anais do XXXIX Simpósio Brasileiro de Bancos de Dados},
+  pages 234--246, Porto Alegre, RS, Brasil. SBC.
+
+\bibitem[Bell et~al. 2009]{BHS09}
+Bell, G., Hey, T., and Szalay, A. (2009).
+\newblock Beyond the data deluge.
+\newblock {\em Science}, 323(5919):1297--1298.
+
+\bibitem[Bourhis et~al. 2017]{bourhis2017json}
+Bourhis, P., Reutter, J.~L., Su{\'a}rez, F., and Vrgo{\v{c}}, D. (2017).
+\newblock {JSON}: data model, query languages and schema specification.
+\newblock In {\em Proceedings of the 36th ACM SIGMOD-SIGACT}.
+
+\bibitem[C{\'a}novas~Izquierdo and Cabot 2013]{canovas2013discovering}
+C{\'a}novas~Izquierdo, J.~L. and Cabot, J. (2013).
+\newblock Discovering implicit schemas in json data.
+\newblock In {\em Web Engineering: 13th International Conference, ICWE 2013,
+  Aalborg, Denmark, July 8-12, 2013. Proceedings 13}, pages 68--83. Springer.
+
+\bibitem[Frozza et~al. 2018]{frozza2018approach}
+Frozza, A.~A., dos Santos~Mello, R., and da~Costa, F. d.~S. (2018).
+\newblock An approach for schema extraction of {JSON} and extended {JSON}
+  document collections.
+\newblock In {\em IRI}. IEEE.
+
+\bibitem[Kellou-Menouer et~al. 2022]{Ke+22}
+Kellou-Menouer, K., Kardoulakis, N., Troullinou, G., Kedad, Z., Plexousakis,
+  D., and Kondylakis, H. (2022).
+\newblock A survey on semantic schema discovery.
+\newblock {\em The VLDB Journal}, 31(4):675--710.
+
+\bibitem[Klessinger et~al. 2023]{klessinger2022extracting}
+Klessinger, S., Klettke, M., Störl, U., and Scherzinger, S. (2023).
+\newblock Extracting {JSON} schemas with tagged unions.
+\newblock {\em arXiv preprint arXiv:2306.07085}.
+
+\bibitem[Namba 2021]{Nam21}
+Namba, J. (2021).
+\newblock Enhancing {JSON} schema discovery by uncovering hidden data.
+\newblock In {\em VLDB 2021 PhD Workshop}.
+
+\bibitem[Peng et~al. 2011]{peng2011using}
+Peng, D., Cao, L., and Xu, W. (2011).
+\newblock Using json for data exchanging in web service applications.
+\newblock {\em Journal of Computational Information Systems}, 7(16):5883--5890.
+
+\bibitem[Pezoa et~al. 2016]{Pezoa16}
+Pezoa, F., Reutter, J.~L., Suarez, F., Ugarte, M., and Vrgo\v{c}, D. (2016).
+\newblock Foundations of json schema.
+\newblock In {\em International World Wide Web Conferences}, WWW '16.
+
+\bibitem[Spoth et~al. 2021]{Sp+21}
+Spoth, W., Kennedy, O., Lu, Y., Hammerschmidt, B., and Liu, Z.~H. (2021).
+\newblock Reducing ambiguity in {JSON} schema discovery.
+\newblock In {\em Proceedings of the 2021 SIGMOD}.
+
+\end{thebibliography}
